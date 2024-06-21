@@ -25,6 +25,7 @@ function Login() {
       setError(error.message);
     }
   };
+  
   return (
     <div className="flex items-center justify-center w-full">
       <div
@@ -35,8 +36,8 @@ function Login() {
             <Logo width="100%" />
           </span>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-light">
-          Sign in your account
+        <h2 className="text-center text-2xl font-bold leading-tight">
+          Sign in to your account
         </h2>
         <p className="mt-2 text-center text-base text-black/60">
           Don&apos;t have any account?&nbsp;
@@ -63,6 +64,17 @@ function Login() {
                 },
               })}
             />
+            <Input
+              label="Password: "
+              type="password"
+              placeholder="Enter your password"
+              {...register("password", {
+                required: true,
+              })}
+            />
+            <Button type="submit" className="w-full">
+              Sign in
+            </Button>
           </div>
         </form>
       </div>
